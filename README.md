@@ -21,7 +21,7 @@ This app allows users to analyze text in real-time while supporting **Dark / Lig
 
 ## 📺 Live Demo
 
-URL:
+URL: https://text-counter-app-eosin.vercel.app/
 
 ## 📂 Project Structure
 
