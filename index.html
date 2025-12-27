@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Counter App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <div class="container">
+        <header class="app-header">
+            <h1><i class="fas fa-text-height"></i> Text Counter Pro</h1>
+            <div class="theme-switch-wrapper">
+                <span class="theme-label">Dark Mode</span>
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" />
+                    <div class="slider round"></div>
+                </label>
+            </div>
+        </header>
+
+        <main class="app-main">
+            <div class="text-controls">
+                <div class="control-group">
+                    <button class="btn btn-primary" id="uppercaseBtn">
+                        <i class="fas fa-text-height"></i> UPPERCASE
+                    </button>
+                    <button class="btn btn-secondary" id="lowercaseBtn">
+                        <i class="fas fa-text-width"></i> lowercase
+                    </button>
+                    <button class="btn btn-success" id="copyBtn">
+                        <i class="far fa-copy"></i> Copy Text
+                    </button>
+                    <button class="btn btn-warning" id="saveBtn">
+                        <i class="far fa-save"></i> Save Text
+                    </button>
+                    <button class="btn btn-info" id="clearBtn">
+                        <i class="fas fa-eraser"></i> Clear Text
+                    </button>
+                    <button class="btn btn-danger" id="loadSavedBtn">
+                        <i class="fas fa-folder-open"></i> Load Saved
+                    </button>
+                </div>
+            </div>
+
+            <div class="editor-section">
+                <div class="textarea-container">
+                    <textarea id="textInput" class="text-editor" placeholder="Start typing or paste your text here..."></textarea>
+                    <div class="text-info">
+                        <span id="editStatus" class="edit-status">
+                            <i class="fas fa-edit"></i> Edit Mode: Active
+                        </span>
+                        <button class="btn btn-sm btn-edit" id="toggleEditBtn">
+                            <i class="fas fa-pen"></i> Toggle Edit
+                        </button>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-font"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-title">Characters</h3>
+                                <p class="stat-value" id="charCount">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-title">Words</h3>
+                                <p class="stat-value" id="wordCount">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-sentence"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-title">Sentences</h3>
+                                <p class="stat-value" id="sentenceCount">0</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-paragraph"></i>
+                            </div>
+                            <div class="stat-content">
+                                <h3 class="stat-title">Paragraphs</h3>
+                                <p class="stat-value" id="paragraphCount">0</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="additional-info">
+                    <div class="info-card">
+                        <h3><i class="fas fa-history"></i> Recently Saved</h3>
+                        <div id="savedItems" class="saved-items">
+                            <p class="empty-message">No saved text yet</p>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <h3><i class="fas fa-info-circle"></i> Instructions</h3>
+                        <ul class="instructions">
+                            <li>Type or paste text in the editor above</li>
+                            <li>Use buttons to transform text</li>
+                            <li>Toggle edit mode to lock/unlock editing</li>
+                            <li>Save text for later use</li>
+                            <li>Switch between dark/light mode</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p>Text Counter App &copy; 2023 | Made with Vanilla JavaScript</p>
+            <p class="version">v1.0.0</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <div class="toast-content">
+            <i class="fas fa-check-circle toast-icon"></i>
+            <span class="toast-message">Operation completed successfully!</span>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
